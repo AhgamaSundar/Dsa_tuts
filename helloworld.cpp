@@ -5,6 +5,7 @@ struct array{
   int arr[20];
   int len;
   int size;
+  int last= len-1;
 
 };
 void display(struct array ars){
@@ -64,16 +65,56 @@ int linsr(struct array *ar,int n){
 return -1;
 }
 
+int binsearch(struct array ar ,int l,int h,int key){
+  int mid;
+  if (l<=h){
+  mid=(l+h)/2;
+    if(key==ar.arr[mid]){
+      return mid;
+    }
+    else if (ar.arr[mid]>key)
+    { 
+      return binsearch(ar,l,mid-1,key);
+    
+    }
+    else if(ar.arr[mid]<key)
+    {
+      return binsearch(ar,mid+1,h,key);
+    }
+    
+  }
+  return -1;
+
+}
+int whilbin(struct array ar,int l,int h,int key){
+  int mid;
+  while(l<=h){
+    mid=(l+h)/2;
+    if (key ==ar.arr[mid]){
+      return mid;
+    }
+    else if(key<ar.arr[mid]){
+      h=mid-1;
+    }
+    else if (key>ar.arr[mid]){
+      l=mid+1;
+    }
+  }
+  return -1;
+}
+
 int main(){
   struct array ars={{1,2,3,4,5},5,10};
+  struct array bin={{100,101,201,304,405,506,607},7,10};
   add(&ars,20);
   insert(&ars,0,70);
   display(ars);
   del(&ars,0);
   display(ars);
-  printf("search  %d\n",linsr(&ars,5));
+ /* printf("search  %d\n",linsr(&ars,5));
   printf("search  %d\n",linsr(&ars,5));
   printf("search %d\n",linsr(&ars,5));
-  display(ars);
+  display(ars); */
+  printf("%d",binsearch(bin,0,6,1));
 
 }
