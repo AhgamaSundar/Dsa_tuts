@@ -111,6 +111,16 @@ int sumalle(struct array ar){
   }
   return  k;
 }
+int sumr(struct array ar,int n){
+  if (n<0 || n>ar.len){
+    return 0;
+
+  }
+  else {
+    return sumr(ar,n-1)+ar.arr[n];
+  }
+}
+
 int main(){
   struct array ars={{1,2,3,4,5},5,10};
   struct array bin={{100,101,201,304,405,506,607},7,10};
@@ -123,7 +133,7 @@ int main(){
   printf("search  %d\n",linsr(&ars,5));
   printf("search %d\n",linsr(&ars,5));
   display(ars); */
-  printf("%d",sumalle(ars));
+  printf("%d",sumr(ars,ars.len));
   
 
 }
