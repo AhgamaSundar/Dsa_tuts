@@ -102,6 +102,18 @@ int whilbin(struct array ar,int l,int h,int key){
   }
   return -1;
 }
+int maxmin(struct array ar ){
+  int mx=0;
+  int sm=0;
+  for (int i=0;i<ar.len;i++){
+    if(ar.arr[i]>mx){
+      mx=ar.arr[i];
+    }
+    
+  }
+  return(mx);  
+
+}
 int sumalle(struct array ar){
   int i ;
   int k =0;
@@ -120,9 +132,36 @@ int sumr(struct array ar,int n){
     return sumr(ar,n-1)+ar.arr[n];
   }
 }
+void reverse(struct array *ar){
+  int m;
+  int j;
+  int array[6];
+  for (int i=ar->len-1,j=0;j<=i;i--,j++){
+    m=ar->arr[j];
+    ar->arr[j]=ar->arr[i];
+    ar->arr[i]=m;
+    
+    }  
+} 
+void leftshift(struct array *ar ,int n){
+
+for(int i=0;i<n;i++){
+  ar->arr[0+ar->len]=ar->arr[0];
+  for(int j=0;j<ar->len;j++){
+    ar->arr[j]=ar->arr[j+1];
+  }
+  
+  
+}
+      
+  
+}
+
+
+
 
 int main(){
-  struct array ars={{1,2,3,4,5},5,10};
+  struct array ars={{'w','e','l','c','o','m','e'},7,10};
   struct array bin={{100,101,201,304,405,506,607},7,10};
  /* add(&ars,20);
   insert(&ars,0,70);
@@ -132,8 +171,10 @@ int main(){
   printf("search  %d\n",linsr(&ars,5));
   printf("search  %d\n",linsr(&ars,5));
   printf("search %d\n",linsr(&ars,5));
-  display(ars); */
-  printf("%d",sumr(ars,ars.len));
-  
+  printf("%d ",sumr(ars,ars.len));
+  printf("%d %d",maxmin(ars)); */
+  display(ars);
+  leftshift(&ars,7);
+  display(ars);
 
 }
