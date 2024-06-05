@@ -102,19 +102,28 @@ int whilbin(struct array ar,int l,int h,int key){
   }
   return -1;
 }
+int sumalle(struct array ar){
+  int i ;
+  int k =0;
+  for(i=0;i<ar.len;i++){
+    k=k+ar.arr[i];
 
+  }
+  return  k;
+}
 int main(){
   struct array ars={{1,2,3,4,5},5,10};
   struct array bin={{100,101,201,304,405,506,607},7,10};
-  add(&ars,20);
+ /* add(&ars,20);
   insert(&ars,0,70);
   display(ars);
   del(&ars,0);
   display(ars);
- /* printf("search  %d\n",linsr(&ars,5));
+  printf("search  %d\n",linsr(&ars,5));
   printf("search  %d\n",linsr(&ars,5));
   printf("search %d\n",linsr(&ars,5));
   display(ars); */
-  printf("%d",binsearch(bin,0,6,1));
+  printf("%d",sumalle(ars));
+  
 
 }
