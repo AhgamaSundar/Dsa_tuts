@@ -147,22 +147,35 @@ void leftshift(struct array *ar ,int n){
 
 for(int i=0;i<n;i++){
   ar->arr[0+ar->len]=ar->arr[0];
+  
   for(int j=0;j<ar->len;j++){
     ar->arr[j]=ar->arr[j+1];
   }
   
-  
+} 
 }
-      
-  
+bool isort(struct array ar){
+  int i=0;
+
+  while(ar.arr[i]<ar.arr[i+1]&&i<ar.len){
+    
+    i++;
+    
+  }
+  if (i==ar.len-1){
+    return true;
+  }
+  return false;
+
 }
 
 
 
 
 int main(){
-  struct array ars={{'w','e','l','c','o','m','e'},7,10};
+  struct array ars={{500,2,3,4,5},5,10};
   struct array bin={{100,101,201,304,405,506,607},7,10};
+  bool x=isort(ars);
  /* add(&ars,20);
   insert(&ars,0,70);
   display(ars);
@@ -172,9 +185,9 @@ int main(){
   printf("search  %d\n",linsr(&ars,5));
   printf("search %d\n",linsr(&ars,5));
   printf("%d ",sumr(ars,ars.len));
-  printf("%d %d",maxmin(ars)); */
+  printf("%d %d",maxmin(ars)); 
   display(ars);
-  leftshift(&ars,7);
-  display(ars);
+  leftshift(&ars,7); */
+  printf("%d",x);
 
 }
