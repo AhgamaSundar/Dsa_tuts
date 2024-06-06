@@ -170,13 +170,28 @@ bool isort(struct array ar){
 
 }
 void insertsot(struct array *ar,int x){
-  int i;
-  for(i=ar->len-1;i<0;i--){
-    if (ar->arr[i]<x){
-      ar->arr[i]=x;
-    }
+  int i=ar->len-1;
+  if(ar->len==ar->size){
+    return;
   }
+  while (i>=0&&ar->arr[i]>x){
+    ar->arr[i+1]=ar->arr[i];
+    i--;
+  }
+  ar->arr[i+1]=x;
+  ar->len++;
   
+}
+void arra(struct array *ar){
+  
+  int j=0;
+  int k=ar->len-1;
+
+  while(j<k){
+    while(ar->arr[j]<0)j++;
+    while(ar->arr[k]>=0)k--;
+    if(j<k)swap(&ar->arr[j],&ar->arr[k]);
+  }
 }
 
 
@@ -184,9 +199,9 @@ void insertsot(struct array *ar,int x){
 
 int main(){
   struct array ars={{1,2,3,4,5},5,10};
-  struct array bin={{100,101,201,304,405,506,607},7,10};
-  insertsot(&ars,0);
-  display(ars);
+  struct array bin={{-1,3,12,-23,4,-2},6,10};
+  arra(&bin);
+  display(bin);
   
 
 }
