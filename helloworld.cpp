@@ -154,10 +154,11 @@ for(int i=0;i<n;i++){
   
 } 
 }
+
 bool isort(struct array ar){
   int i=0;
 
-  while(ar.arr[i]<ar.arr[i+1]&&i<ar.len){
+  while(ar.arr[i]<ar.arr[i+1]&&i<ar.len-1){
     
     i++;
     
@@ -168,26 +169,24 @@ bool isort(struct array ar){
   return false;
 
 }
+void insertsot(struct array *ar,int x){
+  int i;
+  for(i=ar->len-1;i<0;i--){
+    if (ar->arr[i]<x){
+      ar->arr[i]=x;
+    }
+  }
+  
+}
 
 
 
 
 int main(){
-  struct array ars={{500,2,3,4,5},5,10};
+  struct array ars={{1,2,3,4,5},5,10};
   struct array bin={{100,101,201,304,405,506,607},7,10};
-  bool x=isort(ars);
- /* add(&ars,20);
-  insert(&ars,0,70);
+  insertsot(&ars,0);
   display(ars);
-  del(&ars,0);
-  display(ars);
-  printf("search  %d\n",linsr(&ars,5));
-  printf("search  %d\n",linsr(&ars,5));
-  printf("search %d\n",linsr(&ars,5));
-  printf("%d ",sumr(ars,ars.len));
-  printf("%d %d",maxmin(ars)); 
-  display(ars);
-  leftshift(&ars,7); */
-  printf("%d",x);
+  
 
 }
