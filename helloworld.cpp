@@ -193,15 +193,46 @@ void arra(struct array *ar){
     if(j<k)swap(&ar->arr[j],&ar->arr[k]);
   }
 }
+struct array* merge(struct array *m ,struct array *n){
+  struct array *f=(struct array *)malloc(sizeof(struct array));
+  int i=0;
+  int j=0;
+  int k=0;
+  while(i<m->len&&j<n->len){
+    if (m->arr[i]<n->arr[j]){
+      f->arr[k]=m->arr[i++];
+    }
+    else{
+      f->arr[k]=n->arr[j++];
+    }
+    k++;
+    
+  }
+  for(;i<m->len;i++){
+    f->arr[k++]=m->arr[i];
+    
+  }
+  for(;j<n->len;j++){
+    f->arr[k++]=n->arr[j];
+    
+  }
+  f->len=m->len+n->len;
+  f->size=20;
+  return f;
+}
+
 
 
 
 
 int main(){
-  struct array ars={{1,2,3,4,5},5,10};
-  struct array bin={{-1,3,12,-23,4,-2},6,10};
-  arra(&bin);
-  display(bin);
+  struct array ars={{1,2,3,4,5,123},6,10};
+  struct array bin={{23,234,44,35,41,565},6,10};
+  struct array *c=merge(&ars,&bin);
+  
+  
+  
+  display(*c);
   
 
 }
