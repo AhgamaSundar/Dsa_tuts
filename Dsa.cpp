@@ -155,7 +155,7 @@ for(int i=0;i<n;i++){
 } 
 }
 
-bool isort(struct array ar){
+bool issort(struct array ar){
   int i=0;
 
   while(ar.arr[i]<ar.arr[i+1]&&i<ar.len-1){
@@ -220,15 +220,127 @@ struct array* merge(struct array *m ,struct array *n){
   f->size=20;
   return f;
 }
+struct array* usnion(struct array *o,struct array *p){
+   struct array *f=(struct array *)malloc(sizeof(struct array));
+    int i=0;
+    int j=0;
+    int k=0;
+    while(i<o->len&&j<p->len){
+      if(o->arr[i]<p->arr[j]){
+        f->arr[k++]=o->arr[i++];
+      }
+      else if(p->arr[j]<o->arr[i]){
+        f->arr[k++]=p->arr[j++];
+      }
+      else{
+        f->arr[k++]=o->arr[i++];
+        j++;
+      }
+    }
+  
+  
+  for(;i<o->len;i++){
+    f->arr[k++]=o->arr[i];
+    
+  }
+  for(;j<p->len;j++){
+    f->arr[k++]=p->arr[j];
+    
+  }
+  f->len=k;
+  f->size=20;
+  return f;
+  
 
+}
+struct array* intersection(struct array *o,struct array *p){
+   struct array *f=(struct array *)malloc(sizeof(struct array));
+    int i=0;
+    int j=0;
+    int k=0;
+    while(i<o->len&&j<p->len){
+      if(o->arr[i]<p->arr[j]){
+        i++;
+      }
+      else if(p->arr[j]<o->arr[i]){
+        j++;
+      }
+      else{
+        f->arr[k++]=o->arr[i++];
+        j++;
+      }
+    }
+  
+  
+ 
+  f->len=k;
+  f->size=20;
+  return f;
+  
 
+}
+struct array* difference(struct array *o,struct array *p){
+   struct array *f=(struct array *)malloc(sizeof(struct array));
+    int i=0;
+    int j=0;
+    int k=0;
+    while(i<o->len&&j<p->len){
+      if(o->arr[i]<p->arr[j]){
+        f->arr[k++]=o->arr[i++];
+      }
+      else if(p->arr[j]<o->arr[i]){
+        j++;
+      }
+      else{
+        i++;
+        j++;
+      }
+    }
+  
+  
+  for(;i<o->len;i++){
+    f->arr[k++]=o->arr[i];
+    
+  }
+  
+  f->len=k;
+  f->size=20;
+  return f;
 
+}
+struct array* usunion(struct array *o,struct array *p){
+   struct array *f=(struct array *)malloc(sizeof(struct array));
+  int k=0;
+  for(int i=0;i<o->len;i++){
+    f->arr[k++]=o->arr[i];
+    f->len++;
+    
+  }
+  int r=o->len+p->len;
+  
+    bool t=0;
+  for(int l=0;l<p->len;l++){
+    t=0;
+    for (int j=0;j<f->len;j++){
+      if(p->arr[l]==f->arr[j]){
+        t= 1;
+        break;
+      }
+      }
+      if(t==0){
+        f->arr[k++]=p->arr[l];
+      }
+  }
+  f->len=k;
+  return f;
+
+}
 
 
 int main(){
-  struct array ars={{1,2,3,4,5,123},6,10};
-  struct array bin={{23,234,44,35,41,565},6,10};
-  struct array *c=merge(&ars,&bin);
+  struct array ars={{1,2,3,4,5,123,402},7,10};
+  struct array bin={{2,34,44,325,401,565},6,10};
+  struct array *c=usunion(&ars,&bin);
   
   
   
