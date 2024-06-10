@@ -2,17 +2,17 @@
 #include<stdio.h>
 #include<stdlib.h>
 struct array{
-  int arr[20];
+  int *arr;
   int len;
   int size;
   int last= len-1;
 
 };
-void display(struct array ars){
+void display(struct array *ars){
     int i;
     printf("display\n");
-  for ( i=0;i<ars.len;i++){
-    printf("%d\n",ars.arr[i]);
+  for ( i=0;i<ars->len;i++){
+    printf("%d\n",ars->arr[i]);
 
   }
 
@@ -338,13 +338,53 @@ struct array* usunion(struct array *o,struct array *p){
 
 
 int main(){
-  struct array ars={{1,2,3,4,5,123,402},7,10};
-  struct array bin={{2,34,44,325,401,565},6,10};
-  struct array *c=usunion(&ars,&bin);
+  struct array men;
+  men.len=0;
+  int x,ch,n;
+  printf("Please enter the size :");
+  scanf("%d",&men.size);
+  men.arr=(int *)malloc(men.size*sizeof(int));
+
+do{
+  printf("Array operations \n");
+  printf("1.Insert\n");
+  printf("2.Add\n");
+  printf("3.Delete\n");
+  printf("4.display\n");
+  printf("5.check if sorted\n");
+  printf("Enter the choice :" );
+  scanf("%d",&ch);
+  switch (ch)
+  {
+  case 1:printf("Enter the location and the element");
+  scanf("%d",&x);
+  scanf("%d",&n);
+  insert(&men,x,n);
+  display(&men);
+  break;
+  case 2:printf("Enter the element");
+    scanf("%d",&x);
+    add(&men,x);
+  break;
+  case 3:printf("Enter the location of the element to delete ");
+  scanf("%d",x);
+  del(&men,x);
+  break;
+  case 4:display(&men);
+  break;
+  case 5:issort(men);
+  break;
+  
+  }
+}while (ch<6);
+
+  
+
+
   
   
   
-  display(*c);
+  
   
 
 }
