@@ -345,13 +345,13 @@ int main(){
   scanf("%d",&men.size);
   men.arr=(int *)malloc(men.size*sizeof(int));
 
-do{
   printf("Array operations \n");
   printf("1.Insert\n");
   printf("2.Add\n");
   printf("3.Delete\n");
   printf("4.display\n");
   printf("5.check if sorted\n");
+do{
   printf("Enter the choice :" );
   scanf("%d",&ch);
   switch (ch)
@@ -367,16 +367,17 @@ do{
     add(&men,x);
   break;
   case 3:printf("Enter the location of the element to delete ");
-  scanf("%d",x);
+  scanf("%d",&x);
   del(&men,x);
   break;
   case 4:display(&men);
   break;
-  case 5:issort(men);
+  case 5:x=issort(men);
+  printf("%d",x);
   break;
   
   }
-}while (ch<6);
+}while(ch<6);
 
   
 
