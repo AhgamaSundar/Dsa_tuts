@@ -372,17 +372,17 @@ do{
   switch (ch)
   {
   case 1:printf("Enter the location and the element");
-  cin>>x;
+  std::cin>>x;
   scanf("%d",&n);
   men->insert(x,n);
   men->display();
   break;
   case 2:printf("Enter the element");
-    cin>>x;
+    std::cin>>x;
     men->add(x);
   break;
   case 3:printf("Enter the location of the element to delete ");
-  cin>>x;
+  std::cin>>x;
   men->del(x);
   break;
   case 4:men->display();
