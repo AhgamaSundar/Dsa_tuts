@@ -27,6 +27,20 @@ void missingsingle(){
 
     
 }
+void missingmulti(){
+    int dif=fir-0;
+    for(int i=0;i<len;i++){
+        if(a[i]-i!=dif){
+            while(dif<a[i]-i){
+                printf("%d",dif+i);
+                dif++;
+            }
+        }
+
+    }
+
+}
+
 void insert(int x){
     a[len]=x;
     fir=a[0];
@@ -38,9 +52,9 @@ int main(){
     iol.insert(1);
     iol.insert(2);
     iol.insert(3);
-    iol.insert(5);
     iol.insert(6);
-    iol.missingsingle();
+    iol.insert(8);
+    iol.missingmulti();
 
     
 
