@@ -7,12 +7,23 @@ private:
    int size;
    int len;
    int fir;
+   int maxv;
 
 public:
 Array(int z){
     a= new int[z];
     size=z;
     len=0;
+}
+int  max(){
+     maxv=0;
+    for(int i=0;i<len;i++){
+        if(a[i]>maxv){
+            maxv=a[i];
+
+        }
+    }
+    return maxv;
 }
 void missingsingle(){
     int dif=fir-0;
@@ -45,8 +56,23 @@ void insert(int x){
     a[len]=x;
     fir=a[0];
     len++;
+    maxv=max();
+}
+void basehash(){
+    int h[maxv+1];
+    for(int i=0;i<maxv+1;i++){
+        h[i]=0;
+    }
+    for(int i=0;i<len;i++){
+        h[a[i]]=1;
+    }
+    for(int i=0;i<maxv+1;i++){
+        printf("%d",h[i]);
+    
+}
 }
 };
+
 int main(){
     Array iol(10);
     iol.insert(1);
@@ -54,7 +80,8 @@ int main(){
     iol.insert(3);
     iol.insert(6);
     iol.insert(8);
-    iol.missingmulti();
+    
+    iol.basehash();
 
     
 
