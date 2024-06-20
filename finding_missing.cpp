@@ -71,17 +71,27 @@ void basehash(){
     
 }
 }
+void dupli(){
+    int last=0;
+    for(int i=0;i<len;i++){
+        if(a[i]==a[i+1]&&last!=a[i+1]){
+            last=a[i];
+            printf(" %d",last);
+        }
+    }
+}
 };
 
 int main(){
     Array iol(10);
     iol.insert(1);
     iol.insert(2);
-    iol.insert(3);
+    iol.insert(2);
     iol.insert(6);
     iol.insert(8);
+    iol.insert(8);
     
-    iol.basehash();
+    iol.dupli();
 
     
 
