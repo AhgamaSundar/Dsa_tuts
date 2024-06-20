@@ -89,6 +89,20 @@ void dupli(){
 
 }
 }
+void hashfordupli(){
+    int h[maxv+1]={1};
+    
+    
+    for(int i=0;i<len;i++){
+        if(a[i]==a[i+1]){
+        h[a[i]]++;
+        }
+    }
+    for(int i=1;i<maxv+1;i++){
+        printf("%d Appears %d  ",i,h[i]);
+    
+}
+}
 };
 
 int main(){
@@ -101,7 +115,7 @@ int main(){
     iol.insert(8);
     iol.insert(8);
     
-    iol.dupli();
+    iol.hashfordupli();
 
     
 
