@@ -90,7 +90,7 @@ void dupli(){
 }
 }
 void hashfordupli(){
-    int h[maxv+1]={1};
+    int h[maxv+1]={0};
     
     
     for(int i=0;i<len;i++){
@@ -99,7 +99,7 @@ void hashfordupli(){
         }
     }
     for(int i=1;i<maxv+1;i++){
-        printf("%d Appears %d  ",i,h[i]);
+        printf("%d  %d  ",i,h[i]);
     
 }
 }
