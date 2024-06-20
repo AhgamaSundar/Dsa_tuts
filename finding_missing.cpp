@@ -72,13 +72,22 @@ void basehash(){
 }
 }
 void dupli(){
-    int last=0;
-    for(int i=0;i<len;i++){
-        if(a[i]==a[i+1]&&last!=a[i+1]){
-            last=a[i];
-            printf(" %d",last);
+   
+    int count=0;
+    for(int i=0;i<len-1;i++){
+        
+        if(a[i]==a[i+1]){
+           
+        int j =i;
+        while(a[j]==a[i]){
+        j++;
+       
         }
+        printf("%d Repeats %d ",a[i],j-i);
+        i=j-1;
     }
+
+}
 }
 };
 
@@ -88,6 +97,7 @@ int main(){
     iol.insert(2);
     iol.insert(2);
     iol.insert(6);
+    iol.insert(8);
     iol.insert(8);
     iol.insert(8);
     
