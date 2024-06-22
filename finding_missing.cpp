@@ -103,6 +103,25 @@ void hashfordupli(){
     
 }
 }
+void findmissuns(){
+    for(int i=0;i<len;i++){
+        int count =1;
+        if(a[i]==-1){
+            i++;
+        }
+        else{
+            for(int j=i+1;j<len;j++){
+                if(a[i]==a[j]){
+                    count++;
+                    a[j]=-1;
+                }
+                }
+                if(count>1){
+                    printf("%d is repeated for %d times ",a[i],count);
+                }
+        }
+    }
+}
 };
 
 int main(){
@@ -115,7 +134,7 @@ int main(){
     iol.insert(8);
     iol.insert(8);
     
-    iol.hashfordupli();
+    iol.findmissuns();
 
     
 
