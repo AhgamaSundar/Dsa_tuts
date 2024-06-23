@@ -89,6 +89,7 @@ void dupli(){
 
 }
 }
+
 void hashfordupli(){
     int h[maxv+1]={0};
     
@@ -103,9 +104,30 @@ void hashfordupli(){
     
 }
 }
+int binsearch(int n){
+    int l=0;
+    int mid;
+    int h=maxv;
+    while(l<h){
+        mid=(l+h)/2;
+        if(a[mid]==n){
+            break;
+    return mid;
+        }
+        else if(n>a[mid])
+        {
+           l=mid; 
+        }
+        else if(n<a[mid])
+        {
+            h=mid;
+        }
+    }
+    return -1;
+}
 void findmissuns(){
     for(int i=0;i<len;i++){
-        int count =1;
+        int count =1; 
         if(a[i]==-1){
             i++;
         }
@@ -115,12 +137,12 @@ void findmissuns(){
                     count++;
                     a[j]=-1;
                 }
-                }
+        }
                 if(count>1){
                     printf("%d is repeated for %d times ",a[i],count);
                 }
         }
-    }
+         }
 }
 };
 
