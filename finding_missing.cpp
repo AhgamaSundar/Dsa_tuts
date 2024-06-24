@@ -144,19 +144,46 @@ void findmissuns(){
         }
          }
 }
+int letcodeezfir(){
+    for(int i=0;i<len-1;i++){
+        for(int j=i;j<len;j++){
+            if(a[i]+a[j]==10){
+            printf("%d    %d" ,a[i],a[j]);
+                break;
+                
+            }
+        }
+    }
+    return -1;
+}
+void hashforleetcodefir(){
+     int h[maxv+1]={0};
+     for(int i=0;i<len;i++){
+        h[a[i]]=1;
+     }
+     for (int i=0;i<len;i++){
+        if(h[10-a[i]]!=0){
+            printf(" %d +%d=%d ",a[i],10-a[i],10);
+            
+        }
+        h[a[i]]++;
+     }
+     printf("None found");
+
+}
 };
 
 int main(){
     Array iol(10);
     iol.insert(1);
     iol.insert(2);
-    iol.insert(2);
-    iol.insert(6);
+    iol.insert(1);
+    iol.insert(1);
     iol.insert(8);
     iol.insert(8);
     iol.insert(8);
     
-    iol.findmissuns();
+    iol.hashforleetcodefir();
 
     
 
