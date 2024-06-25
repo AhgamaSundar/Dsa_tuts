@@ -189,19 +189,33 @@ void findKSum(int k){
         }
     }
 }
+void findmaxmin(){
+    int max=a[0];
+    int min=a[0];
+    for (int i=1;i<len;i++){
+        if(a[i]>max){
+            max=a[i];
+        }
+        else if(a[i]<min){
+            min=a[i];
+            
+        }
+    }
+    printf("Max is %d Min is %d",max,min);
+}
 };
 
 int main(){
     Array iol(10);
-    iol.insert(1);
-    iol.insert(2);
-    iol.insert(3);
-    iol.insert(4);
-    iol.insert(6);
-    iol.insert(8);
-    iol.insert(10);
+    iol.insert(20);
+    iol.insert(2223);
+    iol.insert(3234);
+    iol.insert(42131);
+    iol.insert(6213);
+    iol.insert(81);
+    iol.insert(10231);
     
-    iol.findKSum(10);
+    iol.findmaxmin();
 
     
 
