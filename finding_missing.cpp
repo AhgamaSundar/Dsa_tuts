@@ -171,19 +171,37 @@ void hashforleetcodefir(){
      printf("None found");
 
 }
+
+void findKSum(int k){
+    int i =0;
+    int j=len -1;
+    while(i<j){
+        if(a[i]+a[j]==k){
+            printf("%d+%d=%d",a[i],a[j],k);
+            i++;
+            j--;
+        }
+        else if((a[i]+a[j])<k){
+            i++;
+        }
+        else if((a[i]+a[j])>k){
+            j--;
+        }
+    }
+}
 };
 
 int main(){
     Array iol(10);
     iol.insert(1);
     iol.insert(2);
-    iol.insert(1);
-    iol.insert(1);
+    iol.insert(3);
+    iol.insert(4);
+    iol.insert(6);
     iol.insert(8);
-    iol.insert(8);
-    iol.insert(8);
+    iol.insert(10);
     
-    iol.hashforleetcodefir();
+    iol.findKSum(10);
 
     
 
