@@ -15,7 +15,7 @@ int main(){
         
     }
     printf("%s \n",str);
-    for (int j=0;str[j]!='\0';j++){
+    for (int j=0;str[j]!='\0';j++){  //switches the case of the strings
         if(str[j]>65 && str[j]<=90){
             str[j]=str[j]+32;
         }
