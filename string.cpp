@@ -1,12 +1,14 @@
 #include <iostream>
 
 int main(){
-    char i;
+    char a;
     char str[]={'a','b','c','\0'};
-    i='a';// can only be given one character while using "char" type 
-    printf("%s",str);
-    scanf("%s",str);
-    printf("%s",str);
-    
-
+    a='a';// can only be given one character while using "char" type 
+    int i;
+    for(i=0;str[i]!='\0';i++){
+        
+    }
+    printf("%s \n",str);
+    printf("The length is %d",i);
+   
 }
