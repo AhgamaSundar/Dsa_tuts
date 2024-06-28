@@ -8,7 +8,12 @@ int main(){
     for(i=0;str[i]!='\0';i++){
         
     }
-    printf("%s \n",str);
-    printf("The length is %d",i);
    
+   
+    for(int j=0;str[j]!='\0';j++){
+        str[j]=str[j]-32;
+        
+    }
+    printf("%s \n",str);
+
 }
