@@ -1,28 +1,29 @@
 #include <iostream>
 
 int main(){
-    char a;
-    char str[]={'a','b','c','\0'};
-    a='a';// can only be given one character while using "char" type 
-    int i;
-    for(i=0;str[i]!='\0';i++){
-        
-    }
+    
+    char str[]={'h','o','w',' ','a','r','e',' ','y','o','u',' ',' ','f','i','n','e','\0'};
+    // can only be given one character while using "char" type 
    
    
-    for(int j=0;str[j]!='\0';j++){
-        str[j]=str[j]-32;// adding 32 makes lower ->UPPER vice versa for making it lower as i  did here
-        
-    }
+   
+   int wordcount=1 ;
+    
     printf("%s \n",str);
     for (int j=0;str[j]!='\0';j++){  //switches the case of the strings
         if(str[j]>65 && str[j]<=90){
             str[j]=str[j]+32;
         }
-        else{
+        else if(str[j]>='a' && str[j]<=122){
             str[j]=str[j]-32;
         }
     }
-     printf("%s \n",str);
+    for(int i=0;str[i]!='\0';i++){
+       if(str[i]==' '&&str[i+1]!=' '){
+        wordcount++;
+       }
 
+
+    }
+     printf("%d",wordcount);
 }
