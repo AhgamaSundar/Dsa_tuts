@@ -18,12 +18,26 @@ int main(){
             str[j]=str[j]-32;
         }
     }
-    for(int i=0;str[i]!='\0';i++){
+    for(int i=0;str[i]!='\0';i++){ // counts the word using the spaces
        if(str[i]==' '&&str[i+1]!=' '){
         wordcount++;
        }
 
 
     }
-     printf("%d",wordcount);
+     //printf("%d",wordcount);
+
+     for(int i=0;str[i]!='\0';i++){
+        int rep=0;
+        if(str[i]==-1){
+            i++;
+        }
+        for(int j=i+1;str[j]!='\0';j++){
+            if(str[i]==str[j]){
+                str[j]==-1;
+                rep++;
+            }
+        }
+            printf(" %c repeats %d times \n" ,str[i],rep);
+     }
 }
