@@ -29,15 +29,15 @@ int main(){
 
      for(int i=0;str[i]!='\0';i++){
         int rep=0;
-        if(str[i]==-1){
-            i++;
-        }
+        if(str[i]!=-1){
+            
+        
         for(int j=i+1;str[j]!='\0';j++){
             if(str[i]==str[j]){
                 str[j]==-1;
                 rep++;
             }
         }
-            printf(" %c repeats %d times \n" ,str[i],rep);
+            printf(" %c repeats %d times \n" ,str[i],rep);}
      }
 }
