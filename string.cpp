@@ -43,17 +43,8 @@ void reverse(char string[]){ //we can also use a tem variable to avoid using ano
         printf(" Not a palindrome");
     }
 }
-//for comparing two strings with the exception of case convert the strirng a lower or a upper one
-int main(){
-    char a[]="meem";
-    char str[]={'h','o','w',' ','a','r','e',' ','y','o','u','1','#','f','i','n','e','$','\0'};
-    // can only be given one character while using "char" type 
-   
-   
-   
-   int wordcount=1 ;
-    
-   
+void switchCase(char *str){
+     
     for (int j=0;str[j]!='\0';j++){  //switches the case of the strings
         if(str[j]>65 && str[j]<=90){
             str[j]=str[j]+32;
@@ -62,6 +53,39 @@ int main(){
             str[j]=str[j]-32;
         }
     }
+}
+//for comparing two strings with the exception of case convert the strirng a lower or a upper one
+
+void hashdupli(char a[]){
+         
+     char string[26]={0};
+     for (int i=0;a[i]!='\0';i++){
+        string[a[i]-'a']++;
+     }
+     for(int i=1;i<26;i++){
+        if(string[i]>1){
+            printf("%c is repeated \n",i+'a');
+        }
+        else{printf("%s",string);}
+     }
+
+
+}
+
+int main(){
+    char a[]="meem";
+    char str[]={'h','o','w',' ','a','r','e',' ','y','o','u','1','#','f','i','n','e','$','\0'};
+    // can only be given one character while using "char" type 
+   
+   
+   
+   int wordcount=1 ;
+   for (int j=0;str[j]!='\0';j++){  //switches the case of the strings
+        if(str[j]>65 && str[j]<=90){
+            str[j]=str[j]+32;
+        }
+    
+   }
     for(int i=0;str[i]!='\0';i++){ // counts the word using the spaces
        if(str[i]==' '&&str[i+1]!=' '){
         wordcount++;
@@ -69,8 +93,8 @@ int main(){
 
 
     }
-    printf("%s",str);
-     reverse(a);
+    printf("%s \n",str);
+     hashdupli(str);
 
      
 }
