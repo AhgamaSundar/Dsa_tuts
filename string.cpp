@@ -13,7 +13,7 @@ void valid(char name[]){
 
 
 }
-void reverse(char string[]){
+void reverse(char string[]){ //we can also use a tem variable to avoid using another array
     int i;
     for (i=0;string[i]!='\0';i++){
 
@@ -51,7 +51,7 @@ int main(){
 
 
     }
-    printf("%s \n",str);
+    printf("%s",str);
      reverse(str);
 
      
