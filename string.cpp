@@ -28,8 +28,8 @@ void reverse(char string[]){ //we can also use a tem variable to avoid using ano
     }
     //checking if palindrome
     bool pali =true;
-    for (int j=0;str[j]!='\0'&&string[j]!='\0' ;j++){
-        if (str[j]!=string[j]){
+    for (int j=0;str[j]!='\0'&&string[j]!='\0' ;j++){ //we can also use same- 
+        if (str[j]!=string[j]){                       //-string array by using two index variables to check for
             pali =false;
             break;
         }
