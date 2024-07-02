@@ -56,11 +56,11 @@ void switchCase(char *str){
 }
 //for comparing two strings with the exception of case convert the strirng a lower or a upper one
 
-void hashdupli(char a[]){
+void hashdupli(char a[]){ //has for finding duplicates
          
      char string[26]={0};
      for (int i=0;a[i]!='\0';i++){
-        string[a[i]-'a']++;
+        string[a[i]-'a']++; //subtracts '97' and increments the index
      }
      for(int i=1;i<26;i++){
         if(string[i]>1){
