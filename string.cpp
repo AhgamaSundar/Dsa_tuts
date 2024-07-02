@@ -1,15 +1,41 @@
 #include <iostream>
 
+void valid(char name[]){
+    bool isValid=true;
+    int i;
+    for( i=0;name[i]!='\0';i++){
+        if(!(name[i]>=65 && name[i]<=90) &&!(name[i]>=97 && name[i] <=122)&&!(name[i]>=48&&name[i]<=57) ){
+        isValid = false;
+        printf("'%c 'is not valid \n",name[i]);
+        }
+    }
+
+
+
+}
+void reverse(char string[]){
+    int i;
+    for (i=0;string[i]!='\0';i++){
+
+    }
+    char * str=new char[i];
+    i=i-1;
+    for(int j=0;i>=0;j++,i--){
+        str[j]=string[i];
+    
+    }
+    printf("%s",str);
+}
 int main(){
     
-    char str[]={'h','o','w',' ','a','r','e',' ','y','o','u',' ',' ','f','i','n','e','\0'};
+    char str[]={'h','o','w',' ','a','r','e',' ','y','o','u','1','#','f','i','n','e','$','\0'};
     // can only be given one character while using "char" type 
    
    
    
    int wordcount=1 ;
     
-    printf("%s \n",str);
+   
     for (int j=0;str[j]!='\0';j++){  //switches the case of the strings
         if(str[j]>65 && str[j]<=90){
             str[j]=str[j]+32;
@@ -25,19 +51,8 @@ int main(){
 
 
     }
-     //printf("%d",wordcount);
+    printf("%s \n",str);
+     reverse(str);
 
-     for(int i=0;str[i]!='\0';i++){
-        int rep=0;
-        if(str[i]!=-1){
-            
-        
-        for(int j=i+1;str[j]!='\0';j++){
-            if(str[i]==str[j]){
-                str[j]==-1;
-                rep++;
-            }
-        }
-            printf(" %c repeats %d times \n" ,str[i],rep);}
-     }
+     
 }
