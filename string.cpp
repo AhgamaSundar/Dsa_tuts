@@ -88,7 +88,7 @@ void bitwisedupli (char a[]){
 void isAnogram(char a[],char b[]){ //using has table to find anogram
     int Hash[26]={0};
     int i;
-    for( i=0;a[i]!='\0'&&b[i]!='0';i++);
+    for( i=0;a[i]!='\0'&&b[i]!='\0';i++);
     if(a[i]=='\0'&&b[i]=='\0'){
         for(int i=0;a[i]!='\0';i++){
             Hash[a[i]-97]++;
