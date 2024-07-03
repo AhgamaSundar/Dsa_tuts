@@ -81,14 +81,46 @@ void bitwisedupli (char a[]){
             printf("%c is duplicate \n",a[i]);
         }
         else{
-            H=H|x;
+            H=H|x; //merging or  ORing
         }
     }
+}
+void isAnogram(char a[],char b[]){
+    int Hash[26]={0};
+    int i;
+    for( i=0;a[i]!='\0'&&b[i]!='0';i++);
+    if(a[i]=='\0'&&b[i]=='\0'){
+        for(int i=0;a[i]!='\0';i++){
+            Hash[a[i]-97]++;
+            Hash[b[i]-97]++;
+        }
+        int j;
+        for( j=0;j<26;j++){
+            if(Hash[j]==1){
+                printf("Not an a  nogram");
+                
+            }
+            
+        }
+        if(j==26){
+            printf("Yep \n %s and %s  is an anogram",a,b);
+        }
+ 
+
+    }
+    else{
+
+        printf("Not an anogram");
+       
+    }
+
 }
 
 int main(){
     char a[]="meem";
     char str[]={'h','o','w',' ','a','r','e',' ','y','o','u','1','#','f','i','n','e','$','\0'};
+    char ano[]="decimal";
+    char gram[]="medical";
     // can only be given one character while using "char" type 
    
    
@@ -107,8 +139,7 @@ int main(){
 
 
     }
-    printf("%s \n",str);
-     bitwisedupli(str);
+   isAnogram(ano,gram);
 
      
 }
