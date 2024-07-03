@@ -72,6 +72,20 @@ void hashdupli(char a[]){ //has for finding duplicates
 
 }
 
+void bitwisedupli (char a[]){
+    long int H=0,x=0;
+    for(int i=0;a[i]!='\0';i++){
+        x=1;
+        x=x<<(a[i]-97); //replacing 0 with 1 by using  the  leftshit operator  which moves the "ON state i.e 1  to the position like has table"
+        if((x&H) >0){ //masking -:basically ANDing two bits i.e performing an AND operation on the two variables bits 
+            printf("%c is duplicate \n",a[i]);
+        }
+        else{
+            H=H|x;
+        }
+    }
+}
+
 int main(){
     char a[]="meem";
     char str[]={'h','o','w',' ','a','r','e',' ','y','o','u','1','#','f','i','n','e','$','\0'};
@@ -94,7 +108,7 @@ int main(){
 
     }
     printf("%s \n",str);
-     hashdupli(str);
+     bitwisedupli(str);
 
      
 }
