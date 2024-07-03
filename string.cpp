@@ -96,8 +96,9 @@ void isAnogram(char a[],char b[]){ //using has table to find anogram
         }
         int j;
         for( j=0;j<26;j++){
-            if(Hash[j]==1){
+            if(Hash[j]%2!=0){
                 printf("Not an a  nogram");
+                break;
                 
             }
             
@@ -119,8 +120,8 @@ void isAnogram(char a[],char b[]){ //using has table to find anogram
 int main(){
     char a[]="meem";
     char str[]={'h','o','w',' ','a','r','e',' ','y','o','u','1','#','f','i','n','e','$','\0'};
-    char ano[]="decimal";
-    char gram[]="medical";
+    char ano[]="verbose";
+    char gram[]="observe";
     // can only be given one character while using "char" type 
    
    
