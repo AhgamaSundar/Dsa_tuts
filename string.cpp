@@ -116,7 +116,7 @@ void isAnogram(char a[],char b[]){ //using has table to find anogram
     }
 
 }
-void premu(char a[], int k){
+void premu(char a[], int k){ //debug this fucntion to get the idea
     static int snew[10]={0};
     static char res[10];
     if(a[k]=='\0'){
@@ -128,8 +128,8 @@ void premu(char a[], int k){
         int i;
         for(i=0;a[i]!='\0';i++){
             if(snew[i]==0){
-            res[k]=a[i];
-            snew[i]=1;
+            res[k]=a[i]; //the output or reult array 
+            snew[i]=1; //the array used as a flag for each element in the original string
             premu(a,k+1);
             snew[i]=0;
             }
