@@ -116,12 +116,34 @@ void isAnogram(char a[],char b[]){ //using has table to find anogram
     }
 
 }
+void premu(char a[], int k){
+    static int snew[10]={0};
+    static char res[10];
+    if(a[k]=='\0'){
+        res[k]='\0';
+        printf("%s \n",res);
+
+    }
+    else{
+        int i;
+        for(i=0;a[i]!='\0';i++){
+            if(snew[i]==0){
+            res[k]=a[i];
+            snew[i]=1;
+            premu(a,k+1);
+            snew[i]=0;
+            }
+        }
+    }
+
+}
 
 int main(){
     char a[]="meem";
     char str[]={'h','o','w',' ','a','r','e',' ','y','o','u','1','#','f','i','n','e','$','\0'};
     char ano[]="verbose";
     char gram[]="observe";
+    char premutation[]="ABC";
     // can only be given one character while using "char" type 
    
    
@@ -140,7 +162,7 @@ int main(){
 
 
     }
-   isAnogram(ano,gram);
+  premu(premutation,0);
 
      
 }
