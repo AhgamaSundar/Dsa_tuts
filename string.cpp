@@ -150,7 +150,7 @@ void prem(char a[],int l ,int h){
        printf(" %s \n",a);
     }
     else{
-    for( i=0;i<=h;i++){
+    for( i=l;i<=h;i++){
 
         swap(a[l],a[i]);
         prem(a,l+1,h);
