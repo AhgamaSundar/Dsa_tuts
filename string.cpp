@@ -13,6 +13,13 @@ void valid(char name[]){
 
 
 }
+void swap(char &a,char &b){
+    char temp;
+    temp=a;
+    a=b;
+    b=temp;
+
+}
 
 void reverse(char string[]){ //we can also use a tem variable to avoid using another array
     int i;
@@ -137,6 +144,21 @@ void premu(char a[], int k){ //debug this fucntion to get the idea
     }
 
 }
+void prem(char a[],int l ,int h){
+    int i;
+    if(l==h){
+       printf(" %s \n",a);
+    }
+    else{
+    for( i=0;i<=h;i++){
+
+        swap(a[l],a[i]);
+        prem(a,l+1,h);
+        swap(a[l],a[i]);
+
+    }
+    }
+}
 
 int main(){
     char a[]="meem";
@@ -162,7 +184,7 @@ int main(){
 
 
     }
-  premu(premutation,0);
+  prem(premutation,0,2);
 
      
 }
