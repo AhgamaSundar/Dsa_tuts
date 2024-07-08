@@ -1,7 +1,7 @@
 #include<stdio.h>
-struct Matrix
+struct Matrix //representing the diagonal matrix
 {
-    int A[10];
+    int A[10]; //but this has 5x5
     int n;
 };
 void Set(struct Matrix *m,int i,int j,int x)
